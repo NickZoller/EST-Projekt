@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane stylesheets="@NewCustomer.css" fx:id="root" fx:controller="defaultPackage.NewCustomerController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <rowConstraints>
+      <RowConstraints prefHeight="50"/>
+      <RowConstraints prefHeight="550"/>
+   </rowConstraints>
+   <children>
+      <Label text="Neuen Kunden spiechern" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="0"/>
+      <GridPane GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="1">
+         <rowConstraints>
+            <RowConstraints prefHeight="350"/>
+            <RowConstraints prefHeight="200"/>
+         </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints prefWidth="300"/>
+            <ColumnConstraints prefWidth="300"/>
+         </columnConstraints>
+         <children>
+            <TextField fx:id="customerName" promptText="Kundenname" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="customerAddress" promptText="Kundenadresse" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Button fx:id="Cancel" mnemonicParsing="false" text="Abbrechen" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#backToFistStep"/>
+            <Button fx:id="Save" mnemonicParsing="false" text="Speichern" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#saveNewCustomer"/>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>

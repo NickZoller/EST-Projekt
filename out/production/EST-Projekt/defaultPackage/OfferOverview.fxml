@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<GridPane stylesheets="@OfferOverviewCSS.css" fx:id="root" fx:controller="defaultPackage.OfferOverviewController" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <rowConstraints>
+        <RowConstraints prefHeight="100"/>
+        <RowConstraints prefHeight="50"/>
+        <RowConstraints prefHeight="150"/>
+        <RowConstraints prefHeight="100"/>
+    </rowConstraints>
+    <children>
+        <Label fx:id="heading" text="Übersicht" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="0"/>
+        <Label fx:id="customer" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="1"/>
+        <Label fx:id="qItems" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="2"/>
+        <GridPane GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="3">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="300"/>
+                <ColumnConstraints prefWidth="300"/>
+            </columnConstraints>
+            <children>
+                <Button text="Abbrechen" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="0" onAction="#exit"/>
+                <Button text="Bestätigen" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="1" onAction="#save"/>
+            </children>
+        </GridPane>
+    </children>
+</GridPane>

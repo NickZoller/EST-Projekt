@@ -1,0 +1,26 @@
+.root {
+    -fx-alignment: center;
+    -fx-pref-height: 400;
+    -fx-pref-width: 600;
+}
+
+Label {
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-text-alignment: center;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+
+TextField {
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-text-alignment: center;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 20;
+}
+
+Button {
+    -fx-cursor: hand;
+}
