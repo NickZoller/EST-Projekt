@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,7 +14,7 @@ public class OfferOverviewController implements Initializable {
     @FXML private Label qItems;
 
     /**
-     * Fills the two Labels customer and qItems with the local data stored previously.
+     * Fills the two Labels customer and qItems with the local data stored during the creation of the offer.
      * @param url
      * @param resourceBundle
      */
