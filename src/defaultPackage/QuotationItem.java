@@ -39,4 +39,10 @@ public class QuotationItem {
         return price;
     }
 
+    /**
+     * @param amount
+     */
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
 }

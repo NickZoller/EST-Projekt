@@ -24,7 +24,7 @@ public class OfferOverviewController implements Initializable {
         customer.setText(customerText);
         String qItemsText = "Einzelposten:";
         for (QuotationItem qItem : Offer.getQuotationItems()) {
-            qItemsText = qItemsText + "\n" + qItem.getProductionStep().getName() + " (" + qItem.getAmount() + " mal), " + qItem.getPrice() + "€";
+            qItemsText = qItemsText + "\n" + qItem.getProductionStep().getName() + " | Einzelpreis: " + qItem.getProductionStep().getCosts() + " € | Menge: " + qItem.getAmount() + " | Gesamtpreis: " + qItem.getPrice();
         }
         qItems.setText(qItemsText);
     }

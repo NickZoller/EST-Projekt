@@ -64,29 +64,49 @@ public class AddQuotationItemController implements Initializable {
      */
     @FXML
     private void finishOffer() throws IOException {
-        addQItemToQList();
-        Offer.setQuotationItems(QuotationItems.getAll());
-        Parent root = FXMLLoader.load(getClass().getResource("OfferOverview.fxml"));
-        Stage stage = (Stage) amountField.getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+        if (addQItemToQList()) {
+            Offer.setQuotationItems(QuotationItems.getAll());
+            Parent root = FXMLLoader.load(getClass().getResource("OfferOverview.fxml"));
+            Stage stage = (Stage) amountField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
     }
 
     /**
      * Checks the entered quotation item for correctness and, if it is correct, saves it to the local storage.
      */
-    private void addQItemToQList() {
+    private Boolean addQItemToQList() {
         ProductionStep pStep = (ProductionStep)ProductionStepList.getValue();
-        double amount = Double.parseDouble(amountField.getText());
-        if(pStep != null && amount > 0) {
-            QuotationItems.add(new QuotationItem((ProductionStep)ProductionStepList.getValue(), amount));
-        } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Fehler");
-            alert.setHeaderText("Fehler");
-            alert.setContentText("Sie müssen einen Posten auswählen und eine Menge angeben.");
-            alert.showAndWait();
+        double amount = 0;
+        try {
+            amount = Double.parseDouble(amountField.getText());
+        } catch (NumberFormatException e) {
+            alert("Die Menge muss eine Zahl sein.");
         }
+        if (pStep != null && amount > 0) {
+            QuotationItems.add(new QuotationItem((ProductionStep)ProductionStepList.getValue(), amount));
+            return true;
+        } else if (amount <= 0) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert("Die Menge muss größer als 0 sein.");
+            return false;
+        } else {
+            alert("Sie müssen einen Posten auswählen.");
+            return false;
+        }
+    }
+
+    /**
+     * Opens an alert dialog with a custom message.
+     * @param message
+     */
+    private void alert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Fehler");
+        alert.setHeaderText("Fehler");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

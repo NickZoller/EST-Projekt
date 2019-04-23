@@ -18,6 +18,13 @@ public class ProductionStep {
     }
 
     /**
+     * @return ID
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
      * @return name
      */
     public String getName() {
@@ -39,6 +46,10 @@ public class ProductionStep {
     @Override
     public String toString() {
         return name;
+    }
+
+    public boolean equals(ProductionStep pStep) {
+        return this.id == pStep.getId();
     }
 
 }
