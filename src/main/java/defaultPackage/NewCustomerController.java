@@ -59,7 +59,7 @@ public class NewCustomerController implements Initializable {
      */
     @FXML
     private void backToFistStep() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CustomerSelection.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/CustomerSelection.fxml"));
         Stage stage = (Stage) customerName.getScene().getWindow();
         stage.setTitle("Angebotserstellung");
         stage.setScene(new Scene(root));

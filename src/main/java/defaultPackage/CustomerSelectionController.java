@@ -48,7 +48,7 @@ public class CustomerSelectionController implements Initializable {
      */
     @FXML
     private void addNewCustomer() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("NewCustomer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/NewCustomer.fxml"));
         Stage stage = (Stage) NewCustomer.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
@@ -69,7 +69,7 @@ public class CustomerSelectionController implements Initializable {
             alert.showAndWait();
         } else {
             Offer.setCustomer((Customer)CustomerList.getValue());
-            Parent root = FXMLLoader.load(getClass().getResource("AddQuotationItem.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/AddQuotationItem.fxml"));
             Stage stage = (Stage) NewCustomer.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();

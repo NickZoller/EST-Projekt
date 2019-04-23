@@ -18,7 +18,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         generateCustomersAndProductionSteps();
 
-        Parent root = FXMLLoader.load(getClass().getResource("CustomerSelection.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/CustomerSelection.fxml"));
         primaryStage.setTitle("Angebotserstellung");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

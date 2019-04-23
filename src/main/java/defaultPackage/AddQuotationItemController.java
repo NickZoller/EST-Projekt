@@ -37,7 +37,7 @@ public class AddQuotationItemController implements Initializable {
      */
     @FXML
     private void backToPreviousStep() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CustomerSelection.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/CustomerSelection.fxml"));
         Stage stage = (Stage) amountField.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
@@ -51,7 +51,7 @@ public class AddQuotationItemController implements Initializable {
     @FXML
     private void addAnotherQuotationItem() throws IOException {
         addQItemToQList();
-        Parent root = FXMLLoader.load(getClass().getResource("AddQuotationItem.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/AddQuotationItem.fxml"));
         Stage stage = (Stage) amountField.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
@@ -66,7 +66,7 @@ public class AddQuotationItemController implements Initializable {
     private void finishOffer() throws IOException {
         if (addQItemToQList()) {
             Offer.setQuotationItems(QuotationItems.getAll());
-            Parent root = FXMLLoader.load(getClass().getResource("OfferOverview.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/OfferOverview.fxml"));
             Stage stage = (Stage) amountField.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
